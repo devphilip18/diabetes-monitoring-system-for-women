@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlucoSense</title>
+
+	<link rel="icon" href="" > 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="/static/css/loader.css">
+	
+</head>
+
+
+
+<style>
+body {
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+button {
+  background-color: #3399ff;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input[type=text], input[type=password] ,input[type=number]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  
+  box-sizing: border-box;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #3399ff;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #004080;
+  color: white;
+}
+
+
+</style>
+
+<body>
+<div align="center">
+<h1 style=" font-size:50px">GlucoSense</h1>
+<div class="topnav">
+  <a href="/">Home</a>
+  <a class="active"  href="/predict">Predict Diabetes</a>
+  <a href="/detect">Monitor Calorie</a>
+</div>
+<hr>
+<h2>Please fill up the following information</h2>
+
+<div class="loader">
+</div>
+
+<form method="post" action="/getdata">
+    <table>
+		 <tr>
+            <td>Enter your age: </td>
+            <td><input type="number" name="age" id="age" required></td>
+        </tr>
+        <tr>
+            <td>No. of pregancies: </td>
+            <td><input type="number" name="preganency" id="preg" required></td>
+        </tr>
+        <tr>
+            <td>Blood Pressure (diastolic): </td>
+            <td><input type="number" name="BloodPressure" id="bp" required></td>
+        </tr>
+        <tr>
+            <td>Skin Thickness</td>
+            <td><input type="number" name="skinthickness" id="skin" value="20" required></td>
+        </tr>
+        <tr>
+            <td>Insulin Level: </td>
+            <td><input type="number" name="insulin" id="insu" required></td>
+        </tr>
+        <tr>
+            <td>BMI (weight(kg)/height(m)): </td>
+            <td><input type="number" name="bmi" id="bmi" required></td>
+        </tr>
+       
+        <tr>
+            <td>
+
+            </td>
+            <td><button type="submit" id="submit" onclick="load()">Submit Form</button></td>
+        </tr>
+    </table>
+</form>
+
+
+	<!-- Modal for loading bar -->
+  <div id="loading">
+  <div id="loading2" style="transform:scale(0.79);">
+  <div></div>
+  </div>
+  </div>
+  
+  
+  
+</div>
+</body>
+<script src="/static/js/loader.js"></script>
+</html>

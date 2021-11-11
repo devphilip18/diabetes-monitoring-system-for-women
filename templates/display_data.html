@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlucoSense</title>
+
+	<link rel="icon" href="">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="/static/css/loader.css">
+
+
+</head>
+
+<style>
+body {
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+button {
+  background-color: #3399ff;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input[type=submit]{
+  background-color: #3399ff;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+}
+
+select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+}
+
+#warn_msg{
+  border: 5px solid grey;
+  margin: 0;
+  }
+  
+#warn_msg2{
+  border: 5px solid grey;
+  margin: 0;
+  
+  }
+  
+#warn_table {
+  
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#warn_table td, #warn_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#warn_table tr:nth-child(even){background-color: #f2f2f2;}
+
+#warn_table tr:hover {background: rgb(93,188,210);
+background: radial-gradient(circle, rgba(93,188,210,1) 0%, rgba(255,255,255,1) 100%);}
+
+
+
+#warn_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+ul {
+  display: table;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #3399ff;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #004080;
+  color: white;
+}
+
+
+</style>
+<body>
+<div align="center">
+	<h1 style=" font-size:50px">GlucoSense</h1>
+	<div class="topnav">
+	<a href="/">Home</a>
+	<a href="/predict">Predict Diabetes</a>
+	<a href="/detect">Monitor Calorie</a>
+	</div>
+
+	<hr>
+	<h2>{{ msg }}</h2>
+	<div id="warn_msg" style="display: inline-block">
+	<h2 id="warn1"></h2>	
+	</div>
+	<br/>
+	<br/>
+	
+	<div id="warn_msg2" style="display:none">
+	
+	<h2 id="warn2">Walking & Stationary Cycling  Exercise</h2>
+	<h4>30 minutes per day of any of these activities should raise your heart rate and leave you sweating.</h4>
+
+	<p><b>Here are some simply ways to increase the amount of walking you do:</b></p>
+	<ul>
+	<li>Deliberately park your car further away from the shops</li>
+	<li>For shorter journeys, walk instead of using the car or other transport</li>
+	<li>Use stairs where possible</li>
+	<li>Get off the bus, tram or tube train a stop or two early</li>
+	<li>Take a break from your computer every hour for a short stroll to stretch your legs</li>
+	<li>Take walks after meals</li>
+	<li>Move around during TV breaks or, better still, take a walk instead of watching TV</li>
+	<li>Make walking a regular family activity</li>
+	<li>Make a point of regularly visiting local parks or attractions</li>
+	</ul> 
+	
+	<p><b>More information on cycling</b></p>
+	<ul>
+	<li>The more you cycle, your blood sugars starts falling faster.</li>
+	<li>To keep your energy levels high consuming small amounts of sugar at frequent intervals is advised.</li>
+	<li>If you are cycling for a short time (20-30 mins),then sipping a sugar drink halfway through your ride.</li>
+	</ul>
+	
+	
+	<p><b><span style="color:red">Avoid any activity that involve a high risk of falling.</span></b></p> 
+	</div>
+	<br>
+	
+	<input type="hidden" name="gluc" id="gluc" value="{{ gluc }}">
+	<div align="center">
+	</div>
+	
+  <div id="loading">
+  <div id="loading2" style="transform:scale(0.79);">
+  <div></div>
+  </div>
+  </div>
+	
+</div>
+</body>
+<script src="/static/js/diet.js"></script>
+</html>

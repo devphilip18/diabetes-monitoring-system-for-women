@@ -7,3 +7,5 @@ Diabetes Monitoring System for Women is system in which diabetes level of pregna
 Dataset Used: PIMA Indians dataset from Kaggle repository.
 
 Keywords: Machine Learning, Linear Regression, Diabetes prediction, Object Detection, FLASK
+
+[License ](/LICENSE.md)
